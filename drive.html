@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./drive.js" charset="utf-8" defer></script>
+  <script src="./swr.js" defer charset="utf-8"></script>
+  <link rel="stylesheet" href="./list.css">
+  <link rel="stylesheet" href="dh.css">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <img id='music' src="./res/left-arrow.svg" onclick="history.go(-1)">
+    <span style="display:none">
+      <button onclick='mkdir()'>create dir</button>
+      <label>
+        <span>upload</span>
+        <input type="file" name="file" style='display:none' multiple accept='audio/*'>
+      </label>
+    </span>
+  </header>
+  <nav></nav>
+</body>
+</html>

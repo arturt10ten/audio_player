@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./player.js" defer charset="utf-8"></script>
+  <script src="./swr.js" defer charset="utf-8"></script>
+  <link rel="stylesheet" href="player.css">
+  <link rel="stylesheet" href="dh.css">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <img src="./res/left-arrow.svg" onclick="history.go(-1)">
+    <span></span>
+  </header>
+  <nav>
+  </nav>
+  <div id="player">
+    <div id='pb'><div></div></div>
+    <div id='buttons'>
+      <button onclick="back()">prev</button>
+      <button onclick="play()">play</button>
+      <button onclick="next()">next</button>
+      <button onclick="pause()">pause</button>
+      <button onclick="stop()">stop</button>
+    </div>
+  </div>
+</body>
+</html>

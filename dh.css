@@ -1,0 +1,14 @@
+header{
+  height: 32px;
+  background-color: white;
+  border-bottom: 1px;
+  border-color: black;
+  border-bottom-style: solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header>*{
+  height: 32px;
+  cursor: pointer;
+}
