@@ -70,4 +70,20 @@ async function http_server_handler(req,res){
     break;
   }
 }
-http.createServer(http_server_handler).listen(5000);
+async function main() {
+  try{
+    await fs.promises.mkdir('./uploaded');
+  }catch(err){}
+  try{
+    await fs.promises.mkdir('./uploaded/p/');
+  }catch(err){}
+  try{
+    await fs.promises.mkdir('./uploaded/music/');
+  }catch(err){}
+  try{
+    await fs.promises.mkdir('./tmp');
+  }catch(err){}
+  await http.createServer(http_server_handler).listen(5000);
+  console.log('server started');
+}
+main();
