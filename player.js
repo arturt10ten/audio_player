@@ -4,10 +4,12 @@ var audio=new Audio();
 var prog=document.querySelector('#pb>*');
 var nav=document.querySelector('nav');
 var marker=document.createElement('span');
+var loader=document.querySelector('#loader');
 audio.set=function(data){
   this.cr=data;
   this.cr.elem.insertBefore(marker,this.cr.elem.firstChild);
   this.src=data.url;
+  loader.href=data.next.url;
   this.currentTime=0;
   audio.play();
 }

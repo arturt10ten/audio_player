@@ -8,4 +8,4 @@ if('serviceWorker' in navigator){
     console.log(i);
   });
 }
-},10000);
+},1000);

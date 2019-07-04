@@ -1,6 +1,7 @@
-var CACHE_NAME = 'my-site-cache-v0';
+var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
   './',
+  './uploaded/p/',
   './dh.css',
   './drive.html',
   './drive.js',
@@ -13,6 +14,10 @@ var urlsToCache = [
   './player.css',
   './player.html',
   './player.js',
+  './swr.js',
+  './res/cloud-computing.svg',
+  './res/left-arrow.svg',
+  './res/rubbish-bin.svg',
 ];
 
 async function sw_fetch(request){
@@ -59,4 +64,18 @@ self.addEventListener('sync', function(event){
     console.log('sync end');
     return;
   })());
+});
+
+addEventListener('backgroundfetchsuccess',(event)=>{
+  const bgFetch=event.registration;
+  event.waitUntil(async function(){
+    const cache=await caches.open('pl_'+bgFetch.id);
+    const records=await bgFetch.matchAll();
+    const promises=records.map(async (record) => {
+      const response=await record.responseReady;
+      await cache.put(record.request,response);
+    });
+    await Promise.all(promises);
+    event.updateUI({title:'done'});
+  }());
 });
